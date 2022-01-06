@@ -9,9 +9,7 @@ def XYPlotting(df,ycolumn,xcolumn,levelcolumn):
     fig, ax = plt.subplots()
     ax = ScatterSubPlotting(df,levelcolumn,xcolumn,ycolumn,ax,colors,markers) 
     plt.legend(loc='upper left', bbox_to_anchor=(1, 1.02))
-    
-    #df.plot.scatter(x=xcolumn,y=ycolumn)
-    
+        
     x = df[xcolumn]
     y = df[ycolumn]
     
