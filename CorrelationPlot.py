@@ -3,11 +3,9 @@ import numpy as np
 from sklearn.metrics import r2_score
 
 def XYPlotting(df,ycolumn,xcolumn,levelcolumn):
-    colors = ["red","blue","green","yellow","magenta","purple","orange","pink","brown","grey","olive"]
-    markers = ["o","v","^","<",">","s","*","x","D","d"]
-    
+
     fig, ax = plt.subplots()
-    ax = ScatterSubPlotting(df,levelcolumn,xcolumn,ycolumn,ax,colors,markers) 
+    ax = ScatterSubPlotting(df,levelcolumn,xcolumn,ycolumn,ax) 
     plt.legend(loc='upper left', bbox_to_anchor=(1, 1.02))
         
     x = df[xcolumn]
@@ -22,7 +20,9 @@ def XYPlotting(df,ycolumn,xcolumn,levelcolumn):
 
     plt.show()
     
-def ScatterSubPlotting (df, level,time,value, ax, colors, markers):
+def ScatterSubPlotting (df, level,time,value, ax):
+    colors = ["red","blue","green","yellow","magenta","purple","orange","pink","brown","grey","olive"]
+    markers = ["o","v","^","<",">","s","*","x","D","d"]
     i=0
     j=0
     for key, grp in df.groupby([level]):

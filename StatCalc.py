@@ -1,10 +1,10 @@
 import numpy as np
 
-def colstats(df,columnname):
+def colstats(df,columnname,doprint,rounddec):
     avg = np.mean(df[columnname])
     stdv = np.std(df[columnname])
-    
-    print(avg,stdv,columnname)
+    if doprint:
+        print(columnname+" Average is "+str(round(avg,rounddec))+" And STDEV is "+str(round(stdv,rounddec)))
     return(avg,stdv)
 
 def groupmean(df,levelcolumn,valuecolumn):
