@@ -12,3 +12,9 @@ def groupmean(df,levelcolumn,valuecolumn):
     mean_df = grouped_df.mean()
     mean_df = mean_df.reset_index()
     return(mean_df)
+    
+def groupstdev(df,levelcolumn,valuecolumn):
+    grouped_df = df.groupby([levelcolumn])
+    stdev_df = grouped_df.std()
+    stdev_df = stdev_df.reset_index()
+    return(stdev_df)
