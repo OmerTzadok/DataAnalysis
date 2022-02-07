@@ -82,3 +82,20 @@ def AddLabels (ycolumn,xcolumn):
     plt.ylabel(ycolumn)
     plt.xlabel(xcolumn)
     plt.suptitle(ycolumn+" by "+xcolumn)
+    
+def SubTrendPlotting(df,timecolumn,valuecolumn,levelcolumn,nsigma,avg,stdv):  
+    #This function gets a df, a timestamp column name, a value column name, a 
+    #categorical level column and a n Sigma for limit calculation and returns a 
+    #time trend chart of said values per time column grouped by the categorical 
+    #column
+    
+    fig, ax = plt.subplots()
+    ax = ScatterSubPlottingDate(df,levelcolumn,timecolumn,valuecolumn,ax)        
+    plt.legend(loc='upper left', bbox_to_anchor=(1, 1.02))
+    tick_spacing = 20
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(tick_spacing))
+    for tick in ax.get_xticklabels():
+        tick.set_rotation(45)
+    AddLimitsLines (avg,stdv,nsigma)
+    AddLabels (valuecolumn,timecolumn)
+    plt.show()
