@@ -10,7 +10,7 @@ def VarPlotting(df,levelcolumn,valuecolumn,nsigma):
     #name and a n Sigma for limit calculation and returns a boxplot chart of 
     #said values per categorical values
     
-    avg,stdv = stat.colstats(df,valuecolumn,0,0)
+    avg,stdv = stat.colstats(df,valuecolumn,0,2)
     df.boxplot(column=valuecolumn,by=levelcolumn,grid=True).set_title("")
     plt.xticks(rotation=90)
     AddLimitsLines (avg,stdv,nsigma)
@@ -23,7 +23,7 @@ def TrendPlotting(df,timecolumn,valuecolumn,levelcolumn,nsigma):
     #time trend chart of said values per time column grouped by the categorical 
     #column
     
-    avg,stdv = stat.colstats(df,valuecolumn,0,0)
+    avg,stdv = stat.colstats(df,valuecolumn,0,2)
     fig, ax = plt.subplots()
     ax = ScatterSubPlottingDate(df,levelcolumn,timecolumn,valuecolumn,ax)        
     plt.legend(loc='upper left', bbox_to_anchor=(1, 1.02))
