@@ -27,4 +27,4 @@ def NormProbPlot (df,valuecolumn,probaxis):
         plt.xticks([0.1,0.5,5,25,50,75,95,99.5,99.9],rotation=45)
     
     plt.grid()
-    fig.show()
+    plt.show();
