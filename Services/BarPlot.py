@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import patheffects
 
-def OrderedBarPlot(df,limit,yvalue,xvalue,dobuckets):
+def OrderedBarPlot(df,limit,yvalue,xvalue,dobuckets=0):
     df= df.sort_values(by=[yvalue])
     
     xvaluelist = df[xvalue].tolist()

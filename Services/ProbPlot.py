@@ -3,7 +3,7 @@ import probscale
 from numpy import min as npmin
 from numpy import max as npmax
 
-def NormProbPlot (df,valuecolumn,probaxis):
+def NormProbPlot (df,valuecolumn,probaxis='y'):
     
     fig, ax = plt.subplots()
     common_opts = dict(
