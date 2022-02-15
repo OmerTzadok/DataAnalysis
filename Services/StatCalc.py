@@ -3,7 +3,7 @@ from numpy import std as npstd
 from numpy import min as npmin
 from numpy import max as npmax
 
-def colstats(df,columnname,doprint,rounddec):
+def colstats(df,columnname,doprint=0,rounddec=10):
     avg = round(npmean(df[columnname]),rounddec)
     stdv = round(npstd(df[columnname]),rounddec)
     if doprint:
@@ -11,7 +11,7 @@ def colstats(df,columnname,doprint,rounddec):
         print(f"{columnname} STDEV is {stdv}")
     return(avg,stdv)
 
-def colstatsfull(df,columnname,doprint,rounddec):
+def colstatsfull(df,columnname,doprint=0,rounddec=10):
     avg = round(npmean(df[columnname]),rounddec)
     stdv = round(npstd(df[columnname]),rounddec)
     minimum = round(npmin(df[columnname]),rounddec)
@@ -51,7 +51,7 @@ def groupmin(df,levelcolumn,valuecolumn):
     min_df = min_df.reset_index()
     return(min_df)
 
-def liststatsfull (listinput,decimals):
+def liststatsfull (listinput,decimals=10):
     
     mean = round(npmean(listinput),decimals)
     stdev = round(npstd(listinput),decimals)
