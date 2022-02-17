@@ -1,4 +1,4 @@
-import StatCalc as stat
+from Services import StatCalc as stat
 
 def clean_outliers (df,valuecolumn,sensitivity):
     #This function takes a df, a specific value column name and sesnsitivy in sigmas, 

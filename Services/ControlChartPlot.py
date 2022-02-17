@@ -3,7 +3,7 @@ import matplotlib.ticker as ticker
 import datetime
 import numpy as np
 from scipy import interpolate
-import StatCalc as stat
+from Services import StatCalc as stat
 
 def var_plotting(df,levelcolumn,valuecolumn,nsigma):  
     #This function gets a df, a categorical level column name, a value column 
