@@ -1,7 +1,7 @@
 import seaborn as sb
 from matplotlib import pyplot as plt
 
-def ViolinPlot(df,ycolumns):
+def violin_plot(df,ycolumns):
     fig, ax = plt.subplots()
     
     plot = sb.violinplot(data=df[ycolumns], inner="quartile",bw=0.2);

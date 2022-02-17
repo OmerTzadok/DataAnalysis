@@ -1,6 +1,6 @@
 from pandas import read_csv as pdread
 
-def PropertiesParser (filepath):
+def properties_parser (filepath):
     
     properties =  pdread(filepath,sep=",")
     

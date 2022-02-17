@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import patheffects
 
-def OrderedBarPlot(df,limit,yvalue,xvalue,dobuckets=0):
+def ordered_bar_plot(df,limit,yvalue,xvalue,dobuckets=0):
     df= df.sort_values(by=[yvalue])
     
     xvaluelist = df[xvalue].tolist()
@@ -34,12 +34,12 @@ def OrderedBarPlot(df,limit,yvalue,xvalue,dobuckets=0):
              ha='center', backgroundcolor='w',alpha=0.5)
     
     if dobuckets:
-        BucketLines(yvaluelist,limit)
+        bucket_lines(yvaluelist,limit)
         
     plt.ylim(0,limit+limit/10)
     plt.tight_layout()
     
-def BucketLines(yvaluelist,limit):
+def bucket_lines(yvaluelist,limit):
     buckets = [int(round(limit*0.2,0)),int(round(limit*0.4,0)),int(round(limit*0.6,0)),int(round(limit*0.8,0))]
     i=0
     for m in range((len(yvaluelist)-1)):

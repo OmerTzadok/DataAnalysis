@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-def Derivative (df,yAxis,xAxis,derivativeName,multiplier):
+def derivative (df,yAxis,xAxis,derivativeName,multiplier):
     diff_df = df.diff()
     diff_df = diff_df.iloc[1: , :].reset_index()
 
